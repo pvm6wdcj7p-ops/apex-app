@@ -1,0 +1,11 @@
+<!doctype html><meta name=viewport content="width=device-width"><body style="font:16px system-ui;padding:16px"><h3>Diagnóstico</h3><pre id=o></pre>
+<script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+const o=document.getElementById('o');const L=t=>o.textContent+=t+'\n';
+(async()=>{
+L('config.js: '+(typeof SUPA_URL!=='undefined'&&!SUPA_URL.includes('PEGA')?'OK':'MAL'));
+L('libreria supabase: '+(window.supabase?'OK':'MAL, no cargo'));
+try{const h=await(await fetch('index.html?'+Date.now())).text();L('index.html usa config.js: '+(h.includes('src="config.js"')?'SI':'NO, es version vieja'));L('index.html con PEGA_AQUI: '+(h.includes('PEGA_AQUI')?'SI, version vieja':'no'))}catch(e){L('index.html: error '+e.message)}
+try{const sb=supabase.createClient(SUPA_URL,SUPA_KEY);const r=await sb.from('productos').select('sku').limit(1);L('conexion a Supabase: '+(r.error?'ERROR '+r.error.message:'OK'))}catch(e){L('Supabase: ERROR '+e.message)}
+})()
+</script>
