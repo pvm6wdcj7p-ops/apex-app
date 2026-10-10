@@ -1,2 +1,3 @@
 const SUPA_URL="https://cfhufrqfkxiqlamdqwdf.supabase.co",SUPA_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNmaHVmcnFma3hpcWxhbWRxd2RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyOTg4MjUsImV4cCI6MjEwNjg3NDgyNX0.4GZiA9K8QyGImJhl4LpUl5Eb7jQ98KVahtjTWMNvPDM";
 document.head.insertAdjacentHTML("beforeend",'<link rel="apple-touch-icon" href="apex_square_sticker_500.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="REFACCIONES APEX"><style>header b{text-transform:uppercase;letter-spacing:.05em}</style>');
+window.addEventListener("load",()=>{const s=document.createElement("script");s.src="mejoras.js?v=1";document.body.appendChild(s)});
